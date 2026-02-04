@@ -53,7 +53,6 @@ const Layout = ({ children }) => {
 
 export default function App() {
   return (
-    <BrowserRouter>
       <Layout>
         <Routes>
           {/* AUTH */}
@@ -205,6 +204,5 @@ export default function App() {
           <Route path="*" element={<NotFound />}/>
         </Routes>
       </Layout>
-    </BrowserRouter>
   );
 }
