@@ -1,0 +1,148 @@
+/* ================= Wrapper ================= */
+.quiz-admin-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background: #014260; /* soft education grey */
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ================= Card ================= */
+.quiz-card {
+  width: 100%;
+  max-width: 640px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 30px 28px;
+  border: 1px solid #e5eaf2;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+/* Quiz date display */
+.quiz-date {
+  background: linear-gradient(135deg, #e8f1ff, #f6f9ff);
+  border: 1px solid #d6e4ff;
+  color: #1e40af;
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+}
+
+.quiz-date span {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+/* ================= Heading ================= */
+.quiz-card h2 {
+  text-align: center;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 22px;
+}
+
+/* ================= Success ================= */
+.success {
+  background: #eef7f1;
+  color: #166534;
+  border: 1px solid #c7ead5;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+/* ================= Inputs & Textareas ================= */
+.quiz-card input,
+.quiz-card textarea,
+.quiz-card select {
+  width: 90%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #d6dde8;
+  background: #ffffff;
+  font-size: 0.95rem;
+  color: #111827;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Placeholder */
+.quiz-card input::placeholder,
+.quiz-card textarea::placeholder {
+  color: #9ca3af;
+}
+
+/* Focus */
+.quiz-card input:focus,
+.quiz-card textarea:focus,
+.quiz-card select:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+/* ================= Options Grid ================= */
+.options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+/* ================= Select ================= */
+.quiz-card select {
+  cursor: pointer;
+}
+
+/* ================= Button ================= */
+.quiz-card button {
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  border: none;
+  background: #3b82f6; /* education blue */
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 4px;
+}
+
+/* Hover */
+.quiz-card button:hover:not(:disabled) {
+  background: #2563eb;
+  box-shadow: 0 6px 14px rgba(59, 130, 246, 0.3);
+}
+
+/* Disabled */
+.quiz-card button:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 520px) {
+  .quiz-card {
+    padding: 24px 20px;
+  }
+
+  .options {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-card h2 {
+    font-size: 1.3rem;
+  }
+}

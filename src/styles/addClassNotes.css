@@ -1,0 +1,163 @@
+/* ================= Wrapper ================= */
+.class-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background: #014260; /* soft education grey */
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+/* ================= Card ================= */
+.class-card {
+  width: 100%;
+  max-width: 640px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 30px 28px;
+  border: 1px solid #e5eaf2;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+/* ================= Heading ================= */
+.class-card h2 {
+  text-align: center;
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 22px;
+}
+
+/* ================= Success ================= */
+.success {
+  background: #eef7f1;
+  color: #166534;
+  border: 1px solid #c7ead5;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 18px;
+}
+
+/* ================= Class Grid ================= */
+.class-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+}
+
+/* ================= Class Button ================= */
+.class-btn {
+  padding: 14px 12px;
+  border-radius: 10px;
+  border: 1px solid #d6dde8;
+  background: #ffffff;
+  color: #1f2937;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Hover */
+.class-btn:hover {
+  border-color: #60a5fa;
+  background: #eff6ff;
+}
+
+/* ================= Form ================= */
+.class-form {
+  margin-top: 6px;
+}
+
+/* ================= Class Badge ================= */
+.class-badge {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* ================= Inputs ================= */
+.class-form input {
+  width: 93%;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #d6dde8;
+  background: #ffffff;
+  font-size: 0.95rem;
+  color: #111827;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Placeholder */
+.class-form input::placeholder {
+  color: #9ca3af;
+}
+
+/* Focus */
+.class-form input:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+/* ================= Button ================= */
+.class-form button {
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  border: none;
+  background: #3b82f6;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 4px;
+}
+
+/* Hover */
+.class-form button:hover:not(:disabled) {
+  background: #2563eb;
+  box-shadow: 0 6px 14px rgba(59, 130, 246, 0.3);
+}
+
+/* Disabled */
+.class-form button:disabled {
+  background: #93c5fd;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ================= Change Class ================= */
+.change-class {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #2563eb;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.change-class:hover {
+  text-decoration: underline;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 520px) {
+  .class-card {
+    padding: 24px 20px;
+  }
+
+  .class-card h2 {
+    font-size: 1.3rem;
+  }
+}

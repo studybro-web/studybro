@@ -1,0 +1,138 @@
+/* ================= PAGE BASE ================= */
+.ca-page {
+  min-height: 100vh;
+  padding: 90px 32px 80px;
+  background: linear-gradient(135deg, #0b1d26, #1a3b4c, #2c5364);
+  color: #e6f7f8;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ================= TITLE ================= */
+.ca-title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  color: #00ffd5;
+  text-shadow: 0 4px 22px rgba(0, 229, 255, 0.45);
+}
+
+/* ================= STATES ================= */
+.ca-state {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 60px;
+  color: #c8f3f4;
+}
+
+/* ================= GRID ================= */
+.ca-grid {
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(300px, 1fr));
+  gap: 110px;
+}
+
+/* ================= CARD ================= */
+.ca-grid .ca-card {
+ width: 320px;
+    height: 360px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.ca-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: #00e5ff;
+  box-shadow: 0 26px 55px rgba(0, 229, 255, 0.25);
+}
+
+/* ================= THUMBNAIL ================= */
+.ca-thumb {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* ================= CONTENT ================= */
+.ca-content {
+  padding: 22px 22px 26px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* ================= DATE ================= */
+.ca-date {
+  font-size: 0.85rem;
+  color: #9defff;
+  margin-bottom: 8px;
+}
+
+/* ================= TITLE ================= */
+.ca-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #00e5ff;
+  line-height: 1.4;
+}
+
+/* ================= DESCRIPTION ================= */
+.ca-content p {
+  font-size: 0.95rem;
+  color: #e6f7f8;
+  line-height: 1.6;
+  flex-grow: 1;
+  margin-bottom: 18px;
+}
+
+/* ================= ACTION BUTTONS ================= */
+.ca-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.ca-actions a {
+  text-decoration: none;
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #00e5ff, #00bcd4);
+  color: #003c44;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0, 229, 255, 0.35);
+}
+
+.ca-actions a:hover {
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 14px 30px rgba(0, 229, 255, 0.55);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .ca-title {
+    font-size: 2.2rem;
+  }
+
+  .ca-thumb {
+    height: 170px;
+  }
+  .ca-grid .ca-card {
+  width: 270px;
+    height: 360px;
+}
+.ca-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(300px, 1fr));
+  gap: 60px;
+  justify-items: center;
+}
+}

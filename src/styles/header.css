@@ -1,0 +1,112 @@
+/* ================= Header Wrapper ================= */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 64px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  padding: 0 24px;
+  border-bottom: 1px solid #e5eaf2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+font-family: "Segoe UI", sans-serif;
+}
+
+/* ================= Logo ================= */
+.logo {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+  white-space: nowrap;
+}
+
+/* ================= Nav ================= */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+/* Nav links */
+.nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+    color: white;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav a:hover {
+  color: #2563eb;
+}
+
+/* Admin Button */
+.admin-btn {
+  padding: 7px 14px;
+  border-radius: 20px;
+  background: #3b82f6;
+  color: white !important;
+  font-size: 0.9rem;
+}
+
+.admin-btn:hover {
+  background: #2563eb;
+}
+
+/* ================= Hamburger ================= */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2.5px;
+  background: #1f2937;
+  border-radius: 2px;
+}
+
+/* ================= Mobile Styles ================= */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    width: 85%;
+     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 24px;
+    gap: 16px;
+    border-bottom: 1px solid #e5eaf2;
+
+    /* HIDDEN by default */
+    transform: translateY(-120%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+  }
+
+  /* ✅ THIS MAKES HAMBURGER WORK */
+  .nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav a {
+    width: 93%;
+  }
+
+  .admin-btn {
+    align-self: flex-start;
+  }
+
+}

@@ -1,0 +1,32 @@
+.selector-page {
+  text-align: center;
+  padding: 40px;
+  background-color: #014260;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.selector-page h2,
+.selector-page p{
+  color: white;
+}
+.selector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+  gap: 20px;
+}
+
+.selector-grid button {
+  padding: 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 16px;
+  border: none;
+  background: white;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.selector-grid button:hover {
+  transform: scale(1.05);
+}
