@@ -40,8 +40,7 @@ const Layout = ({ children }) => {
 
   // pages where header/footer should NOT appear
   const hideLayout =
-    location.pathname === "/" ||
-    location.pathname === "/login";
+    location.pathname === "/" ;
 
   return (
     <>
@@ -59,7 +58,6 @@ export default function App() {
         <Routes>
           {/* AUTH */}
           <Route path="/" element={<Login />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/home" element={<Home />} />
 
