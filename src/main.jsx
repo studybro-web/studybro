@@ -7,12 +7,11 @@ import { AdminProvider } from "./context/AdminContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <HashRouter>
-<AuthProvider>
-  <AdminProvider>
-    <App />
-  </AdminProvider>
-</AuthProvider>
+    <AuthProvider>
+      <AdminProvider>
+        <App />
+      </AdminProvider>
+    </AuthProvider>
   </HashRouter>
-    
-
 );
+

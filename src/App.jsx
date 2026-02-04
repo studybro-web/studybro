@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -38,9 +38,9 @@ import NotFound from "./components/NotFound";
 const Layout = ({ children }) => {
   const location = useLocation();
 
-  // pages where header/footer should NOT appear
+  // Hide header/footer only on login pages
   const hideLayout =
-    location.pathname === "/" ;
+    location.pathname === "/" || location.pathname === "/admin-login";
 
   return (
     <>
@@ -53,156 +53,159 @@ const Layout = ({ children }) => {
 
 export default function App() {
   return (
-      <Layout>
-        <Routes>
-          {/* AUTH */}
-          <Route path="/" element={<Login />} />
-          <Route path="/admin-login" element={<AdminLogin />} />
-          <Route path="/home" element={<Home />} />
+    <Layout>
+      <Routes>
+        {/* AUTH */}
+        <Route path="/" element={<Login />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/home" element={<Home />} />
 
-          {/* STUDENT */}
-          <Route path="/news" element={<DailyNews />} />
-          <Route path="/daily-quiz" element={<DailyQuiz />} />
-          <Route path="/gk" element={<GK />} />
-          <Route path="/current-affairs" element={<CurrentAffairs />} />
-          <Route path="/class-notes" element={<ClassNotes />} />
+        {/* STUDENT */}
+        <Route path="/news" element={<DailyNews />} />
+        <Route path="/daily-quiz" element={<DailyQuiz />} />
+        <Route path="/gk" element={<GK />} />
+        <Route path="/current-affairs" element={<CurrentAffairs />} />
+        <Route path="/class-notes" element={<ClassNotes />} />
 
-          {/* ADMIN */}
-          <Route
-            path="/admin"
-            element={
-              <AdminRoute>
-                <AdminDashboard />
-              </AdminRoute>
-            }
-          />
+        {/* ADMIN */}
+        <Route
+          path="/admin"
+          element={
+            <AdminRoute>
+              <AdminDashboard />
+            </AdminRoute>
+          }
+        />
 
-          <Route
-            path="/admin/add-current-affairs"
-            element={
-              <AdminRoute>
-                <AddCurrentAffairs />
-              </AdminRoute>
-            }
-          />
+        <Route
+          path="/admin/add-current-affairs"
+          element={
+            <AdminRoute>
+              <AddCurrentAffairs />
+            </AdminRoute>
+          }
+        />
 
-          <Route
-            path="/admin/view/current-affairs"
-            element={
-              <AdminRoute>
-                <ViewCurrentAffairs />
-              </AdminRoute>
-            }
-          />
+        <Route
+          path="/admin/view/current-affairs"
+          element={
+            <AdminRoute>
+              <ViewCurrentAffairs />
+            </AdminRoute>
+          }
+        />
 
-          <Route
-            path="/admin/add-daily-news"
-            element={
-              <AdminRoute>
-                <AddDailyNews />
-              </AdminRoute>
-            }
-          />
+        <Route
+          path="/admin/add-daily-news"
+          element={
+            <AdminRoute>
+              <AddDailyNews />
+            </AdminRoute>
+          }
+        />
 
-          <Route
-            path="/admin/view/daily-news"
-            element={
-              <AdminRoute>
-                <ViewDailyNews />
-              </AdminRoute>
-            }
-          />
+        <Route
+          path="/admin/view/daily-news"
+          element={
+            <AdminRoute>
+              <ViewDailyNews />
+            </AdminRoute>
+          }
+        />
 
-          <Route
-            path="/admin/add-daily-quiz"
-            element={
-              <AdminRoute>
-                <AddDailyQuiz />
-              </AdminRoute>
-            }
-          />
+        <Route
+          path="/admin/add-daily-quiz"
+          element={
+            <AdminRoute>
+              <AddDailyQuiz />
+            </AdminRoute>
+          }
+        />
 
-          <Route
-            path="/admin/add-gk"
-            element={
-              <AdminRoute>
-                <AddGK />
-              </AdminRoute>
-            }
-          />
+        <Route
+          path="/admin/add-gk"
+          element={
+            <AdminRoute>
+              <AddGK />
+            </AdminRoute>
+          }
+        />
 
-          <Route
-            path="/admin/view-materials"
-            element={
-              <AdminRoute>
-                <AdminViewMaterials />
-              </AdminRoute>
-            }
-          />
+        <Route
+          path="/admin/view-materials"
+          element={
+            <AdminRoute>
+              <AdminViewMaterials />
+            </AdminRoute>
+          }
+        />
 
-          <Route
-            path="/admin/view/gk"
-            element={
-              <AdminRoute>
-                <AdminGKSubjects />
-              </AdminRoute>
-            }
-          />
-          <Route
-            path="/admin/view/daily-quiz"
-            element={
-              <AdminRoute>
-                <AdminDailyQuiz />
-              </AdminRoute>
-            }
-          />
+        <Route
+          path="/admin/view/gk"
+          element={
+            <AdminRoute>
+              <AdminGKSubjects />
+            </AdminRoute>
+          }
+        />
 
-          <Route
-            path="/admin/view/gk/:subject"
-            element={
-              <AdminRoute>
-                <AdminGKList />
-              </AdminRoute>
-            }
-          />
+        <Route
+          path="/admin/view/daily-quiz"
+          element={
+            <AdminRoute>
+              <AdminDailyQuiz />
+            </AdminRoute>
+          }
+        />
 
-          <Route
-            path="/admin/add-class-notes"
-            element={
-              <AdminRoute>
-                <AddClassNotes />
-              </AdminRoute>
-            }
-          />
+        <Route
+          path="/admin/view/gk/:subject"
+          element={
+            <AdminRoute>
+              <AdminGKList />
+            </AdminRoute>
+          }
+        />
 
-          <Route
-            path="/admin/view/class-notes"
-            element={
-              <AdminRoute>
-                <AdminClassSelect />
-              </AdminRoute>
-            }
-          />
+        <Route
+          path="/admin/add-class-notes"
+          element={
+            <AdminRoute>
+              <AddClassNotes />
+            </AdminRoute>
+          }
+        />
 
-          <Route
-            path="/admin/view/class/:classNo"
-            element={
-              <AdminRoute>
-                <AdminClassSubjects />
-              </AdminRoute>
-            }
-          />
+        <Route
+          path="/admin/view/class-notes"
+          element={
+            <AdminRoute>
+              <AdminClassSelect />
+            </AdminRoute>
+          }
+        />
 
-          <Route
-            path="/admin/view/class/:classNo/:subject"
-            element={
-              <AdminRoute>
-                <AdminClassChapters />
-              </AdminRoute>
-            }
-          />
-          <Route path="*" element={<NotFound />}/>
-        </Routes>
-      </Layout>
+        <Route
+          path="/admin/view/class/:classNo"
+          element={
+            <AdminRoute>
+              <AdminClassSubjects />
+            </AdminRoute>
+          }
+        />
+
+        <Route
+          path="/admin/view/class/:classNo/:subject"
+          element={
+            <AdminRoute>
+              <AdminClassChapters />
+            </AdminRoute>
+          }
+        />
+
+        {/* 404 MUST BE LAST */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Layout>
   );
 }
