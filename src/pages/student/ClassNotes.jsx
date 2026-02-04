@@ -20,8 +20,6 @@ const ClassNotes = () => {
         id: doc.id,
         ...doc.data(),
       }));
-
-      console.log("ALL NOTES:", data); // 🔍 debug
       setNotes(data);
       setLoading(false);
     };
